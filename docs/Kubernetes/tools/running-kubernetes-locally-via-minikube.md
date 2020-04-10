@@ -23,7 +23,7 @@ Minikube supports the following Kubernetes features:
 
 ## Installation
 
-See [Installing Minikube](/docs/tasks/tools/install-minikube/).
+See [Installing Minikube](/docs/tasks/tools/install-minikube.md).
 
 ## Quickstart
 
