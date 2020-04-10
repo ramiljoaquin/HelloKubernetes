@@ -4,9 +4,9 @@
 
 ### Kubernetes
 
-- [Install kubectl](https://github.com/Ubidy/Ubidy_Playbook/blob/master/docs/Kubernetes/tools/install-kubectl.md)
-- [Install minikube](https://github.com/Ubidy/Ubidy_Playbook/blob/master/docs/Kubernetes/tools/install-minikube.md)
-- [Running Kubernetes locally via minikube](https://github.com/Ubidy/Ubidy_Playbook/blob/master/docs/Kubernetes/tools/running-kubernetes-locally-via-minikube.md)
+- [Install kubectl](https://github.com/ramiljoaquin/docs/Kubernetes/tools/install-kubectl.md)
+- [Install minikube](https://github.com/ramiljoaquin/docs/Kubernetes/tools/install-minikube.md)
+- [Running Kubernetes locally via minikube](https://github.com/ramiljoaquin/docs/Kubernetes/tools/running-kubernetes-locally-via-minikube.md)
 
 - [Kubernetes 101](https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16)
 
