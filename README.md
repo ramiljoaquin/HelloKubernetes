@@ -1,5 +1,12 @@
 # Let's Kube
 
+
+![Kube architecture][logo]
+
+[logo]: https://github.com/ramiljoaquin/HelloKubernetes_AKS/blob/master/assets/KubeArchitecture.png "Kubernetes architecture"
+
+
+
 ## Getting Started
 
 ### Kubernetes
