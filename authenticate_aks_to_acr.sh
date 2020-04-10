@@ -1,6 +1,6 @@
-AKS_RESOURCE_GROUP=Ubidy.IT.Kubernetes.SoutheastAsia.DevLab
-AKS_CLUSTER_NAME=ubidy-kube-devlab
-ACR_RESOURCE_GROUP=Ubidy.IT.Kubernetes.SoutheastAsia.DevLab
+AKS_RESOURCE_GROUP=IT.Kubernetes.SoutheastAsia.DevLab
+AKS_CLUSTER_NAME=company-kube-devlab
+ACR_RESOURCE_GROUP=IT.Kubernetes.SoutheastAsia.DevLab
 ACR_NAME=devlabContainerRegistry
 
 # Get the id of the service principal configured for AKS

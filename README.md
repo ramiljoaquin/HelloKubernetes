@@ -4,9 +4,9 @@
 
 ### Kubernetes
 
-- [Install kubectl](https://github.com/ramiljoaquin/docs/Kubernetes/tools/install-kubectl.md)
-- [Install minikube](https://github.com/ramiljoaquin/docs/Kubernetes/tools/install-minikube.md)
-- [Running Kubernetes locally via minikube](https://github.com/ramiljoaquin/docs/Kubernetes/tools/running-kubernetes-locally-via-minikube.md)
+- [Install kubectl](https://github.com/ramiljoaquin/HelloKubernetes/tree/master/docs/Kubernetes/tools/install-kubectl.md)
+- [Install minikube](https://github.com/ramiljoaquin/HelloKubernetes/tree/master/docs/Kubernetes/tools/install-minikube.md)
+- [Running Kubernetes locally via minikube](https://github.com/ramiljoaquin/HelloKubernetes/tree/master/docs/Kubernetes/tools/running-kubernetes-locally-via-minikube.md)
 
 - [Kubernetes 101](https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16)
 
@@ -19,7 +19,7 @@ $ ls
 Dockerfile              Pages                   Startup.cs              letskubedeploy.yml
 LetsKube.csproj         Program.cs              appsettings.json
 $ dotnet restore
-  Restore completed in 4.48 sec for /Users/ramil.ubidy/Source/hello_kube/LetsKube.csproj.
+  Restore completed in 4.48 sec for /Users/ramiljoaquin/Source/hello_kube/LetsKube.csproj.
 $ docker build . -t letskube:local
 Sending build context to Docker daemon  1.455MB
 Step 1/10 : FROM microsoft/aspnetcore-build AS build-env
@@ -467,9 +467,9 @@ $
 1. Create shell file authenticate_aks_to_acr.sh and copy and paste the code below:
 
 ```bash
-AKS_RESOURCE_GROUP=Ubidy.IT.Kubernetes.SoutheastAsia.DevLab
-AKS_CLUSTER_NAME=ubidy-kube-devlab
-ACR_RESOURCE_GROUP=Ubidy.IT.Kubernetes.SoutheastAsia.DevLab
+AKS_RESOURCE_GROUP=IT.Kubernetes.SoutheastAsia.DevLab
+AKS_CLUSTER_NAME=company-kube-devlab
+ACR_RESOURCE_GROUP=IT.Kubernetes.SoutheastAsia.DevLab
 ACR_NAME=devlabContainerRegistry
 
 # Get the id of the service principal configured for AKS
@@ -494,7 +494,7 @@ $
 Let's grab the login server details using the az acr list command and use the query to extract the value of login which happen to be devlabcontainerregistry.azurecr.io.
 
 ```bash
-$ az acr list --resource-group Ubidy.IT.Kubernetes.SoutheastAsia.De
+$ az acr list --resource-group IT.Kubernetes.SoutheastAsia.De
 ab --query "[].{acrLoginServer:loginServer}" --output table
 AcrLoginServer
 ----------------------------------
@@ -637,11 +637,11 @@ clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
 $
 ```
 
-3. To start the Kubernetes dashboard, use the az aks browse command. The following example opens the dashboard for the cluster named ubidy-kube-devlab in the resource group named Ubidy.IT.Kubernetes.SoutheastAsia.DevLab:
+3. To start the Kubernetes dashboard, use the az aks browse command. The following example opens the dashboard for the cluster named company-kube-devlab in the resource group named IT.Kubernetes.SoutheastAsia.DevLab:
 
 ```bash
-$ az aks browse --resource-group Ubidy.IT.Kubernetes.SoutheastAsia.DevLab --name ubidy-kube-devlab
-Merged "ubidy-kube-devlab" as current context in /var/folders/c1/hpcxpvbj1q1c1yhp8djvkhlc0000gn/T/tmpzsk06g8a
+$ az aks browse --resource-group IT.Kubernetes.SoutheastAsia.DevLab --name company-kube-devlab
+Merged "company-kube-devlab" as current context in /var/folders/c1/hpcxpvbj1q1c1yhp8djvkhlc0000gn/T/tmpzsk06g8a
 Proxy running on http://127.0.0.1:8001/
 Press CTRL+C to close the tunnel...
 $
@@ -786,7 +786,7 @@ Now we sign each of these CSRs with the CA certificate we created (adjust the da
 ```bash
 $ openssl x509 -req -CA ca.cert.pem -CAkey ca.key.pem -CAcreateserial -in tiller.csr.pem -out tiller.cert.pem -days 365
 Signature ok
-subject=/C=PH/ST=Pampanga/L=Clark/O=Ubidy/OU=DevOps/CN=devlab/emailAddress=ramil.joaquin@ubidy.com
+subject=/C=PH/ST=Pampanga/L=Clark/O=Company/OU=DevOps/CN=devlab/emailAddress=ramil.joaquin@com
 Getting CA Private Key
 $
 ```
@@ -796,7 +796,7 @@ $
 ```bash
 $ openssl x509 -req -CA ca.cert.pem -CAkey ca.key.pem -CAcreateserial -in helm.csr.pem -out helm.cert.pem  -days 365
 Signature ok
-subject=/C=PH/ST=Pampanga/L=Clark/O=Ubidy/OU=DevOps/CN=devlab/emailAddress=ramil.joaquin@ubidy.com
+subject=/C=PH/ST=Pampanga/L=Clark/O=Company/OU=DevOps/CN=devlab/emailAddress=ramil.joaquin@com
 Getting CA Private Key
 $
 ```
@@ -826,7 +826,7 @@ $ helm init \
 >     --tls-ca-cert ca.cert.pem \
 >     --service-account tiller \
 >     --node-selectors "beta.kubernetes.io/os"="linux"
-$HELM_HOME has been configured at /Users/ramil.ubidy/.helm.
+$HELM_HOME has been configured at /Users/ramiljoaquin/.helm.
 Warning: Tiller is already installed in the cluster.
 (Use --client-only to suppress this message, or --upgrade to upgrade Tiller to the current version.)
 ```
